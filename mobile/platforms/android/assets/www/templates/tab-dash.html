@@ -1,0 +1,27 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="list">
+      <div class="item item-input item-select screen-width-dropdown">
+        <div class="input-label">
+          Grocery Place
+        </div>
+        <select>
+          <option>Target</option>
+          <option selected>Costco</option>
+          <option>Trader Joe's</option>
+        </select>
+      </div>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Location to meet</span>
+        <input type="text" placeholder="Location to meet" ng-model="request.location">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Tips</span>
+        <input type="text" placeholder="Tips" ng-model="request.tips">
+      </label>
+      <div class="padding">
+        <button class="button button-block button-calm" ng-click="makeARequest(request)">Bring Me!</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,57 @@
+<!-- Bringer View -->
+<ion-view view-title="Dashboard">
+  <ion-nav-bar class="bar">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-ios-cart-outline" ng-click="shoppingCartPage()" badge="productsCount()" badge-style="badge-assertive">
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-side-menus>
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+      <div class="list menu-top">
+      </div>
+    </ion-side-menu>
+
+    <ion-side-menu-content>
+      <div class="list list-wo-bottom-margin menu-top">
+        <div class="item item-input item-select screen-width-dropdown">
+          <div class="input-label">
+            Grocery Place
+          </div>
+          <select ng-model="request.vendor" ng-change="goPickProducts()">
+            <option>Target</option>
+            <option selected>Costco</option>
+            <option>Trader Joe's</option>
+          </select>
+        </div>
+      </div>
+      <ion-list>
+        <div class="list list-inset">
+
+            <ion-item ng-repeat="request in open_requests">
+              <div class="row">
+                <div class="co col-75" ng-click="currentRequest($index)">
+                  <span class="bringme_name"> Anna </span> needs to get something from <span class="vendor_name"> {{request.vendor}} </span>
+                </div>
+                <div class="co col-25">
+                  <span ng-hide="request.taken">
+                    <img ng-click="takeRequest(request)" src="/img/plus-icon.png" width="25px" height="25px" style="float:right;">
+                  </span>
+                  <span ng-show="request.taken">
+                    <img ng-click="takeRequest(request)" src="/img/check-icon.png" width="25px" height="25px" style="float:right;">
+                  </span>  
+                </div>
+              </div>
+              
+            </div>
+        </div>
+      <ion-list>
+    </ion-side-menu-content>
+  </ion-side-menus>
+</ion-view>

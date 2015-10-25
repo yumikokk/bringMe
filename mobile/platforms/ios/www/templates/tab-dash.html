@@ -1,0 +1,56 @@
+  <!-- Bring Me View -->
+  <ion-view view-title="Dashboard">
+    <ion-nav-bar class="bar">
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-cart-outline" ng-click="shoppingCartPage()" badge="productsCount()" badge-style="badge-assertive">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-side-menus>
+      <!-- Left menu -->
+      <ion-side-menu side="left">
+        <div class="list menu-top">
+          <div class="item item-divider">
+            Costco
+            <p>2573 Geary St.</p>
+          </div>
+          <div class="vendor-bringers">
+            <a class="item item-icon-left no-borders" href="#">
+              <i class="icon ion-model-s"></i>
+                <span class="time-to-order">10 mins</span>
+            </a>
+            <a class="item item-icon-left no-borders" href="#">
+              <i class="icon ion-android-time"></i>
+                <span class="time-to-order">45 mins</span>
+            </a>
+            <div class="number-of-bringers"> Bringers (2) </div>
+          </div>
+        </div>
+      </ion-side-menu>
+
+      <ion-side-menu-content>
+        <div class="list list-wo-bottom-margin menu-top">
+          <div class="item item-input item-select screen-width-dropdown">
+            <div class="input-label">
+              Grocery Place
+            </div>
+            <select ng-model="request.vendor" ng-change="goPickProducts()">
+              <option>Target</option>
+              <option selected>Costco</option>
+              <option>Trader Joe's</option>
+            </select>
+          </div>
+        </div>
+          <div id="map" data-tap-disabled="true"></div>
+      </ion-side-menu-content>
+    </ion-side-menus>
+  </ion-view>
+
+
+
+

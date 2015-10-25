@@ -1,0 +1,73 @@
+<ion-view view-title="Shopping Cart">
+  <ion-nav-bar>
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  	<ion-nav-buttons side="right">
+  	  <button class="button button-icon button-clear ion-ios-cart-outline shopping-cart-icon"><span class="badge badge-bringme">{{total_qty}}</span>
+  	  </button>
+  	</ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-side-menus>
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+      <div class="list">
+
+      </div>
+    </ion-side-menu>
+
+    <ion-side-menu-content>
+    	<div class="menu-top"></div>
+      <div ng-hide="request.products">
+        <div class="row" style="margin-top:200px;">
+          <div class="col col-33 col-offset-25">
+            <img src="/img/shopping-cart.jpg" width="200px" height="200px">
+          </div>  
+        </div>
+        <div class="list">
+          <div class="item item-divider sub-title-background" style="text-align:center;" ng-click="goShopping()">
+            Your cart is Empty Now! Go Shopping!
+          </div>
+        </div>
+      </div>
+      <div ng-show="request.products">
+        <div class="list">
+          <div class="item item-divider sub-title-background">
+            Products
+          </div>
+          <a class="item item-thumbnail-left" ng-repeat="product in request.products">
+            <img src="{{product.image_url}}">
+            <p>{{product.complete_name}}</p>
+            <div class="row">
+              <div class="co co-50">
+                  <span class="input-label">Qty</span><input type="number" placeholder="0" min="0" ng-model="product.qty">
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Location to meet</span>
+          <input type="text" placeholder="Location to meet" ng-model="request.meet_location">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Tips</span>
+          <input type="number" min="0" placeholder="Tips, $5" ng-model="request.tips" ng-change="addUp()">
+        </label>
+        <div class="list card">
+
+          <a href="#" class="item">
+            <span>Taxes:</span>
+            <span class="pull-right"> $ {{taxes | number:2 }} </span>
+          </a>
+          <a href="#" class="item">
+            Estimate Total: 
+            <span class="pull-right"> $ {{estimate_total | number:2 }}</span>
+          </a>
+        </div>
+        <div class="padding">
+          <button class="button button-block button-bringme" ng-click="makeARequest(request)">Bring Me!</button>
+        </div>
+      </div>
+    </ion-side-menu-content>
+  </ion-side-menus>
+</ion-view>

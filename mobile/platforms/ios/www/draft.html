@@ -1,0 +1,84 @@
+<ion-nav-bar class="bar">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-navicon" ng-click="toggleRight()">
+    </button>
+  </ion-nav-buttons>
+</ion-nav-bar>
+
+<ion-side-menus>
+  <!-- Left menu -->
+  <ion-side-menu side="right">
+    <div class="list menu-top">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Location to meet</span>
+        <input type="text" placeholder="Location to meet" ng-model="request.location">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Tips</span>
+        <input type="number" placeholder="Tips, $5" ng-model="request.tips">
+      </label>
+      <div class="padding">
+        <button class="button button-block button-calm" ng-click="makeARequest(request)">Bring Me!</button>
+      </div>
+    </div>
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+    <div class="list list-wo-bottom-margin menu-top">
+      <div class="item item-input item-select screen-width-dropdown">
+        <div class="input-label">
+          Grocery Place
+        </div>
+        <select ng-model="request.vendor" ng-change="goPickProducts()">
+          <option>Target</option>
+          <option selected>Costco</option>
+          <option>Trader Joe's</option>
+        </select>
+      </div>
+    </div>
+      <div id="map" data-tap-disabled="true"></div>
+  </ion-side-menu-content>
+</ion-side-menus>
+
+      <div class="row">
+        <div class="col col-25" ng-repeat="product in products">
+          <div class="list card">
+            <div class="item item-image">
+              <img src="{{product.image_url}}">
+            </div>
+            <div class="item">
+              <p>{{product.complete_name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25">Three</div>
+        <div class="col col-25">Four</div>
+      </div>
+
+            <div class="list">
+            <a class="item item-thumbnail-left" ng-repeat="product in products">
+              <img src="{{product.image_url}}">
+              <p>{{product.complete_name}}</p>
+              <p>{{product.short_name}}</p>
+              <div class="row">
+                <div class="co co-50">
+                    <span class="input-label">Qty</span><input type="number" placeholder="0" min="0" ng-model="product.qty" ng-change="addProducts(product)">
+                </div>
+              </div>
+            </a>
+      </div>
+
+
+              <label class="item item-input item-floating-label">
+          <span class="input-label">Location to meet</span>
+          <input type="text" placeholder="Location to meet" ng-model="request.location">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Tips</span>
+          <input type="number" placeholder="Tips, $5" ng-model="request.tips">
+        </label>
+        <div class="padding">
+          <button class="button button-block button-calm" ng-click="makeARequest(request)">Bring Me!</button>
+        </div>

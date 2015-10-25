@@ -1,0 +1,51 @@
+<ion-view view-title="Add Product">
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nick Name</span>
+        <input type="text" placeholder="Nick Name" ng-model="product.short_name">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Complete Product Name</span>
+        <input type="text" placeholder="Complete Product Name" ng-model="product.complete_name">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Image URL</span>
+        <input type="text" placeholder="Image URL" ng-model="product.image_url">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Description</span>
+        <input type="text" placeholder="Description" ng-model="product.description">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Manufacture Sku</span>
+        <input type="text" placeholder="Manufacture Sku" ng-model="product.manufacture_sku">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Vendor Sku</span>
+        <input type="text" placeholder="Vendor Sku" ng-model="product.vendor_sku">
+      </label>
+      <div class="item item-input item-select screen-width-dropdown">
+        <div class="input-label">
+          Vendor
+        </div>
+        <select ng-model="product.vendor">
+          <option>Target</option>
+          <option selected>Costco</option>
+          <option>Trader Joe's</option>
+        </select>
+      </div>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Retail Price</span>
+        <input type="text" placeholder="Retail Price" ng-model="product.unit_price">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Notes</span>
+        <input type="text" placeholder="Notes" ng-model="product.notes">
+      </label>
+      <div class="padding">
+        <button class="button button-block button-calm" ng-click="addProduct(product)">Add Product</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

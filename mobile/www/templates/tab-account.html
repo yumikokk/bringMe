@@ -1,0 +1,34 @@
+<ion-view view-title="Account">
+  <ion-content>
+  	<div class="list">
+  		<div ng-show="!isLoggedIn">
+  			<label class="item" ng-click="login()">
+  			  Login
+  			</label>
+  			<label class="item" ng-click="register()">
+  			  Register
+  			</label>
+  		</div>
+  		<div ng-show="isLoggedIn">
+		  	<label class="item" ng-click="logout()">
+		  	  LogOut
+		  	</label>
+	  	</div>
+      <div class="item item-toggle">
+         BringMe
+         <label class="toggle toggle-bringme">
+           <input type="checkbox" ng-click="updateRole()" id="user_prefer_role">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <label class="item" ng-click="venmo()">
+      Venmo
+      </label>
+      <label class="item" ng-click="pay()">
+        Make A Payment
+      </label>
+  	</div>
+  </ion-content>
+</ion-view>

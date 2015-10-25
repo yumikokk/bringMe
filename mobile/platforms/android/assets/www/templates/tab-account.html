@@ -1,0 +1,19 @@
+<ion-view view-title="Account">
+  <ion-content>
+  	<div class="list">
+  		<div ng-show="!isLoggedIn">
+  			<label class="item" ng-click="login()">
+  			  Login
+  			</label>
+  			<label class="item" ng-click="register()">
+  			  Register
+  			</label>
+  		</div>
+  		<div ng-show="isLoggedIn">
+		  	<label class="item" ng-click="logout()">
+		  	  LogOut
+		  	</label>
+	  	</div>
+  	</div>
+  </ion-content>
+</ion-view>

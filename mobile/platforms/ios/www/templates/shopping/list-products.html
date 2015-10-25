@@ -1,0 +1,50 @@
+<ion-view view-title="Products">
+  <ion-nav-bar>
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  	<ion-nav-buttons side="right">
+  	  <button class="button button-icon button-clear ion-ios-cart-outline shopping-cart-icon" ng-click="shoppingCartPage()"><span class="badge badge-bringme">{{total_qty}}</span>
+  	  </button>
+  	</ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-side-menus>
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+      <div class="list">
+
+      </div>
+    </ion-side-menu>
+
+    <ion-side-menu-content drag-content="true">
+    	<div class="menu-top"></div>
+        <div class="list list-wo-bottom-margin">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search">
+          </label>
+        </div>
+        <div class="list">
+          <div class="item item-divider sub-title-background">
+            Featured Products
+          </div>
+          <div class="row">
+            <div class="col col-30" ng-repeat="product in products">
+              <div class="list card">
+                <div class="item item-image">
+                  <img src="{{product.image_url}}">
+                </div>
+                <div class="product-name list-item-gradient-background" style="padding:10px;">
+                {{product.complete_name}}</div>
+                <div class="row">
+                    <span class="input-label">Qty</span><input class="qty-input" type="number" placeholder="0" min="0" ng-model="product.qty" ng-change="addProducts(product)">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item item-divider sub-title-background">
+            Recently Purchased
+          </div>
+        </div>
+    </ion-side-menu-content>
+  </ion-side-menus>
+</ion-view>

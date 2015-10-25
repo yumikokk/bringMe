@@ -1,0 +1,44 @@
+<ion-view view-title="Register" name="user-register-view">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="email" placeholder="Email" ng-model="user.email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Username</span>
+        <input type="text" placeholder="Username" ng-model="user.username">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="Password" ng-model="user.password">
+      </label>
+      <label class="item item-radio">
+        <input type="radio" name="user.prefer_role" ng-model="user.prefer_role" value=0 >
+        <div class="item-content">
+          BringMe
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+      <label class="item item-radio">
+        <input type="radio" name="user.prefer_role" ng-model="user.prefer_role" value=1 >
+        <div class="item-content">
+          BringEr
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+    </div>
+
+    <div class="padding">
+      <button class="button button-block button-calm" ng-click="register()">Register</button>
+    </div>
+    <div class="mini-text center-text grey-text">
+      <span>
+        Already have an account yet? <span class="ng-click" ng-click="goLogin()">Login</span> here
+      </span>
+      <div>
+        <span class="ng-click" ng-click="goHome()">Keep Exploring</span> 
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

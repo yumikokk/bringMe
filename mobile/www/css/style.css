@@ -1,0 +1,99 @@
+/* Empty. Add your own CSS if you like */
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.list-wo-bottom-margin {
+	margin-bottom: 0;
+}
+
+.menu-top {
+	margin-top: 50px;
+}
+
+.time-to-order {
+	margin-left: 10px;
+	color: #555;
+}
+
+.number-of-bringers {
+	margin: 15px;
+	color: #555;
+}
+
+.no-borders {
+	border-color: #fff;
+}
+
+.item-image .product-name {
+	margin-top: -5px;
+	
+}
+.qty-input {
+	width: 100%;
+}
+
+.product_name {
+	height: 30px;
+	display: block;
+	text-align: justify;
+}
+
+.list-item-gradient-background {
+	color: #fff; 
+	background: linear-gradient(rgba(50,50,50,0.4) 5%, rgba(50,50,50,0.6) 80%);
+	background: -webkit-linear-gradient(rgba(50,50,50,0.4) 5%, rgba(50,50,50,0.6) 80%);
+	font-size: 16px;
+}
+
+.shopping-cart-icon {
+	color: #fff;
+	margin-right: 20px;
+}
+
+.badge-bringme{
+	opacity: 0;
+	padding-top: 8px;
+	margin-top: -30px;
+	color: #fff;
+	background-color: #58C0A0;
+	height: 30px;
+	width: 30px;
+	border-radius: 50px;
+	z-index: -999;
+}
+
+.sub-title-background {
+	background-color: #58C0A0;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.grey-text {
+	color: #555;
+}
+
+.ng-click {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.vendor_name {
+	font-weight: bold;
+	color: #58C0A0;
+}
+
+.bringme_name {
+	font-weight: bold;
+	color: #29345B;
+}
+
+.mins-ago {
+	color: #555;
+	font-size: 12px;
+	vertical-align: sub;
+}
